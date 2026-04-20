@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# reference material from the old Webflow site (not used by the app)
+/weblow-export
+
+# local Claude Code settings
+.claude/settings.local.json
