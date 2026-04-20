@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     description:
       "Call, email, or send us a message for a fast, free quote. Little Rock, AR + surrounding areas.",
     url: "/contact",
-    images: ["/images/NEW-LOGO.png"],
+    images: ["/images/site/2024-09-21.jpg"],
   },
 };
 

@@ -50,14 +50,19 @@ export default function NavBar() {
     >
       <div className="max-w-[1280px] mx-auto px-5 flex items-center justify-between h-[84px]">
         {/* Logo */}
-        <Link href="/" className="flex items-center shrink-0" aria-label="Elite Grounds Lawn & Landscaping home">
+        <Link
+          href="/"
+          className="flex items-center shrink-0"
+          aria-label="Elite Grounds Lawn & Landscaping home"
+        >
           <Image
             src="/images/NEW-LOGO.png"
             alt="Elite Grounds Lawn & Landscaping logo"
-            width={220}
-            height={70}
+            width={827}
+            height={819}
             priority
-            className="h-[60px] w-auto"
+            sizes="84px"
+            className="h-[84px] w-auto"
           />
         </Link>
 

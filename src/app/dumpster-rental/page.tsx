@@ -57,6 +57,7 @@ export default function DumpsterRentalPage() {
                 width={1400}
                 height={900}
                 priority
+                sizes="(max-width: 992px) 90vw, 540px"
                 className="w-full h-auto"
               />
             </div>

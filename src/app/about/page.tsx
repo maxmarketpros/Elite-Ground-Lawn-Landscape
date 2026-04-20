@@ -94,6 +94,7 @@ export default function AboutPage() {
                 alt="Clean, professionally mowed front lawn with landscaped entry walk"
                 width={1600}
                 height={1200}
+                sizes="(max-width: 992px) 90vw, 540px"
                 className="w-full h-auto rounded-xl shadow-[0_10px_30px_rgba(0,0,0,0.12)]"
                 loading="lazy"
               />

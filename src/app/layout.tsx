@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Montserrat, Rubik } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/layout/NavBar";
@@ -10,13 +10,22 @@ const montserrat = Montserrat({
   variable: "--font-montserrat-var",
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
 });
 
 const rubik = Rubik({
   variable: "--font-rubik-var",
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
+  display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#f26222",
+  colorScheme: "light",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -26,6 +35,8 @@ export const metadata: Metadata = {
   },
   description:
     "Little Rock's trusted lawn & landscape experts. Lawn mowing, mulch installation, landscaping rocks, tree services, and 15-yard dumpster rental. Family-owned, 20 years of experience.",
+  applicationName: "Elite Grounds Lawn & Landscaping",
+  generator: "Next.js",
   keywords: [
     "lawn care Little Rock",
     "landscaping Little Rock AR",
@@ -37,10 +48,9 @@ export const metadata: Metadata = {
     "sod installation",
     "yard clean up Little Rock",
   ],
-  icons: {
-    icon: "/images/favicon.png",
-    apple: "/images/app-icon.png",
-  },
+  authors: [{ name: "Elite Grounds Lawn & Landscaping" }],
+  creator: "Elite Grounds Lawn & Landscaping",
+  publisher: "Elite Grounds Lawn & Landscaping",
   alternates: {
     canonical: "/",
   },
@@ -52,26 +62,28 @@ export const metadata: Metadata = {
     description:
       "From overgrown to outstanding — Elite Grounds transforms yards across Little Rock and surrounding areas with expert lawn care, mulch, rocks, tree services and more.",
     locale: "en_US",
-    images: [
-      {
-        url: "/images/NEW-LOGO.png",
-        width: 1200,
-        height: 630,
-        alt: "Elite Grounds Lawn & Landscaping",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Elite Grounds Lawn & Landscaping | Little Rock, AR",
     description:
       "Little Rock's trusted lawn & landscape experts. Family-owned. Free quotes.",
-    images: ["/images/NEW-LOGO.png"],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+  formatDetection: {
+    telephone: false,
+    email: false,
+    address: false,
   },
 };
 
@@ -83,8 +95,8 @@ const localBusinessJsonLd = {
   url: SITE_URL,
   telephone: "+1-501-503-8577",
   email: "elitegroundslawn@gmail.com",
-  image: `${SITE_URL}/images/NEW-LOGO.png`,
-  logo: `${SITE_URL}/images/NEW-LOGO.png`,
+  image: `${SITE_URL}/icon.png`,
+  logo: `${SITE_URL}/icon.png`,
   description:
     "Family-owned lawn care and landscaping company serving Little Rock, AR and surrounding areas. Lawn mowing, mulch installation, landscaping rocks, tree services, and dumpster rental.",
   address: {
@@ -130,7 +142,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${rubik.variable} scroll-smooth`} data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      className={`${montserrat.variable} ${rubik.variable} scroll-smooth`}
+      data-scroll-behavior="smooth"
+    >
       <body>
         <script
           type="application/ld+json"
